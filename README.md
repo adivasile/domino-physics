@@ -1,4 +1,6 @@
 domino-physics
 ==============
 
-C++ physics engone
+C++ physics engine
+
+Work in progress. Not much here. Check back later.

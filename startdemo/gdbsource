@@ -1,0 +1,27 @@
+define gotoKernel
+c
+b __OpenCL_integrate_kernel
+c
+b transform
+end
+ 
+define dbgPrintParams
+
+    p *inverseMass   
+    p *linearDamping
+    p *angularDamping
+    p *inverseInertiaTensor
+    
+    p *position
+    p *orientation
+    p *transformMatrix
+    
+    p *velocity
+    p *rotation
+    p *acceleration
+    
+    p *forceAccum
+    p *torqueAccum
+    p *inverseInertiaTensorWorld
+
+end
