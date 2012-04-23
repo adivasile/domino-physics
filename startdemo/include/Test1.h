@@ -11,6 +11,8 @@ class Test1 : public Test
     // lumini
     Light *light;
 
+    domino::Engine *engine;
+
 public:
     Test1();
     virtual ~Test1();

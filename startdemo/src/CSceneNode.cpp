@@ -54,7 +54,6 @@ void CSceneNode::Render()
 		return;
 
 	
-/*
     // translatie
     glTranslatef(position.x, position.y, position.z);
 
@@ -65,7 +64,6 @@ void CSceneNode::Render()
 
     // scalare
     glScalef(scale.x, scale.y, scale.z);
-*/
      
     glColor3f(color.x, color.y, color.z);
     if (Lighted)
@@ -84,15 +82,13 @@ void CSceneNode::Render()
       glDisable( GL_LIGHTING);
 
     glPushMatrix();
-        if(mesh != NULL)
-        {
-              mesh->Draw(Wireframe);
-        }
-        else if(Wireframe)
+        if(Wireframe)
         {
               glutSolidSphere(1.0,8,16);
-        }else
+        } else
+        {
               glutWireSphere(1.0,8,16);
+        }
 
         if (!Lighted)
           glEnable( GL_LIGHTING);

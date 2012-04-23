@@ -10,3 +10,10 @@
 *.lai
 *.la
 *.a
+
+CMakeCache.txt
+CMakeFiles/
+startdemo/CMakeFiles
+startdemo/CMakeCache.txt
+Makefile
+cmake_install.cmake

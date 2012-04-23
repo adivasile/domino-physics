@@ -12,9 +12,11 @@ set ( DOMINO_DEMO_SOURCES
         ${PROJECT_SOURCE_DIR}/Test1.cpp
     )
 
-include_directories(./include)
+include_directories(./include ../include)
+FIND_LIBRARY(DOMINO_LIB NAMES domino PATHS /home/adrian/work/domino-physics/)
 
 add_executable(demo ${DOMINO_DEMO_SOURCES})
+TARGET_LINK_LIBRARIES(demo ${DOMINO_LIB})
 TARGET_LINK_LIBRARIES(demo GL)
 TARGET_LINK_LIBRARIES(demo GLEW)
 TARGET_LINK_LIBRARIES(demo glut)

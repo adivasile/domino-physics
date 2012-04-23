@@ -173,33 +173,31 @@ void CMesh::Draw(bool Wireframe)
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     }
 
-    if (verts != NULL && bufferArray != NULL && indexArray != NULL)
-    {
+    // if (verts != NULL && bufferArray != NULL && indexArray != NULL)
+    // {
 
-        glBindBuffer(GL_ARRAY_BUFFER, vboID);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, idxID);
+    //     glBindBuffer(GL_ARRAY_BUFFER, vboID);
+    //     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, idxID);
 
-        glEnableClientState(GL_COLOR_ARRAY);
-        glEnableClientState(GL_NORMAL_ARRAY);
-        glEnableClientState(GL_VERTEX_ARRAY);
+    //     glEnableClientState(GL_COLOR_ARRAY);
+    //     glEnableClientState(GL_NORMAL_ARRAY);
+    //     glEnableClientState(GL_VERTEX_ARRAY);
 
-        glNormalPointer(GL_FLOAT, sizeof(Vertex), BUFFER_OFFSET(12));
-        glColorPointer(4, GL_FLOAT, sizeof(Vertex), BUFFER_OFFSET(24));
-        glVertexPointer(3, GL_FLOAT, sizeof(Vertex), BUFFER_OFFSET(0));
+    //     glNormalPointer(GL_FLOAT, sizeof(Vertex), BUFFER_OFFSET(12));
+    //     glColorPointer(4, GL_FLOAT, sizeof(Vertex), BUFFER_OFFSET(24));
+    //     glVertexPointer(3, GL_FLOAT, sizeof(Vertex), BUFFER_OFFSET(0));
 
-        glDrawElements(GL_TRIANGLES, maxfaces * 3, GL_UNSIGNED_SHORT,
-                       BUFFER_OFFSET(0));
+    //     glDrawElements(GL_TRIANGLES, maxfaces * 3, GL_UNSIGNED_SHORT,
+    //                    BUFFER_OFFSET(0));
 
-        glDisableClientState(GL_COLOR_ARRAY);
-        glDisableClientState(GL_NORMAL_ARRAY);
-        glDisableClientState(GL_VERTEX_ARRAY);
+    //     glDisableClientState(GL_COLOR_ARRAY);
+    //     glDisableClientState(GL_NORMAL_ARRAY);
+    //     glDisableClientState(GL_VERTEX_ARRAY);
 
-    }
+    // }
 
-    glPushMatrix();
-        glScalef(0.2, 0.2, 0.2);
-        glutSolidSphere(5, 100, 100);
-    glPopMatrix();
+    glScalef(0.2, 0.2, 0.2);
+    glutSolidSphere(5, 100, 100);
  
 //     glDeleteBuffers(1, &vboID);
 //     glDeleteBuffers(1, &idxID);

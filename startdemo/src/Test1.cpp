@@ -19,6 +19,7 @@ Test1::Test1()
     
     camera1 = currentCamera = new Camera();
     light = new Light();
+    engine = new domino::Engine();
     
     // initializare camere/observator        
     camera1->SetPosition(Vector3D(N*1, 0, M*4));
@@ -29,15 +30,18 @@ Test1::Test1()
     light->SetAttenuation(0.1,0.1,0);
 
     CMesh * mesh1 = OFF::ReadFileMesh("res/sphere.off");
-    CMesh * planeMesh = OFF::ReadFileMesh("res/plane.off");
+    // CMesh * planeMesh = OFF::ReadFileMesh("res/plane.off");
 
-    CSceneNode* obj = new CSceneNode(mesh1);
-    objects.push_back(obj);
-    obj->SetColor(Vector3D(0, 1, 0));
-    obj->SetSpecular(Vector4D(1, 1, 1, 1));
-    obj->SetShininess(10);
-    obj->SetPosition(Vector3D(2, 1, 0));
-
+    CSceneNode* obj;
+    for(int i = 0; i < 3; i++)
+    {
+        obj = new CSceneNode(mesh1);
+        objects.push_back(obj);
+        obj->SetColor(Vector3D(0, 1, 0));
+        obj->SetSpecular(Vector4D(1, 1, 1, 1));
+        obj->SetShininess(10);
+        obj->SetPosition(Vector3D(2 + i, 1, 0));
+    }
 }
 
 Test1::~Test1()
@@ -54,7 +58,7 @@ void Test1::draw()
     light->Illuminate();
     for(int i = 0; i < objects.size(); i++)
     {
-        objects.at(i)->Render();	
+        objects.at(i)->Render();
     }
 }
 

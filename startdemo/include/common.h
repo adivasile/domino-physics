@@ -14,6 +14,8 @@
 #include <GL/glu.h>
 #include <GL/glext.h>
 
+#include <domino.h>
+
 
 
 #endif // COMMON_H_

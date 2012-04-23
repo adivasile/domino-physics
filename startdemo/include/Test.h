@@ -12,6 +12,9 @@
 #include "Camera.h"
 #include "Light.h"
 
+#include <domino.h>
+
+
 class Test
 {
 public:   
