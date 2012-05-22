@@ -19,8 +19,7 @@ public:
 	Vector3D GetPosition ();
 	void SetPosition (Vector3D);
 	void reset();
-	void updatePosition(Vector3D);
-	GLfloat unghi;
+	GLfloat angle;
 	Vector3D Position;	//pozitia in cadrul scenei
 	Vector3D ForwardVector;
 	Vector3D Direction;	//directia de deplasare a jucatorului (y constant)
